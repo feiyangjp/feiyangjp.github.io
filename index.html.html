@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高成不動産 | 都市部の高品質な賃貸・売買物件</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="高成不動産は地域密着型の不動産会社。賃貸・売買の仲介、管理運営、投資コンサルティングを提供します。運営：高成商事株式会社。">
+  <meta name="keywords" content="高成不動産, 高成商事株式会社, 不動産, 賃貸, 売買, 物件仲介, 資産管理">
+  <meta name="author" content="高成商事株式会社">
+  <meta property="og:title" content="高成不動産">
+  <meta property="og:description" content="都市部の高品質な賃貸・売買物件をワンストップでご提供。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://takanarijp.com">
+  <meta property="og:image" content="https://takanarijp.com/og-image.jpg">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "高成不動産",
+    "url": "https://takanarijp.com",
+    "legalName": "高成商事株式会社",
+    "logo": "https://takanarijp.com/logo.png",
+    "telephone": "048-767-4458",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "浦和区岸町7-1-11 Plenty203",
+      "addressLocality": "さいたま市浦和区",
+      "addressRegion": "埼玉県",
+      "postalCode": "330-0064",
+      "addressCountry": "JP"
+    },
+    "areaServed": "JP"
+  }
+  </script>
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; line-height: 1.6; color: #333; }
+    a { color: #0066cc; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    /* Header */
+    header { background: #004080; color: #fff; padding: 20px; position: sticky; top: 0; z-index: 1000; }
+    .logo { font-size: 1.5rem; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; }
+    nav ul li a { color: #fff; }
+    /* Hamburger for mobile */
+    .menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; }
+    @media(max-width: 768px) {
+      nav ul { display: none; flex-direction: column; background: #004080; width: 100%; }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: block; }
+    }
+    /* Hero */
+    .hero { background: url('hero.jpg') center/cover no-repeat; height: 60vh; display: flex; align-items: center; justify-content: center; }
+    .hero h1 { background: rgba(0,0,0,0.5); color: #fff; padding: 20px; font-size: 2rem; text-align: center; }
+    /* Sections */
+    section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+    .grid { display: grid; gap: 20px; }
+    .services .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .services .item { border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
+    .listings .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .listing { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+    .listing img { height: 200px; object-fit: cover; }
+    .listing-content { padding: 15px; }
+    /* Contact & Map */
+    .contact { padding-bottom: 40px; }
+    .contact form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto; }
+    .contact input, .contact textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; }
+    .contact button { background: #004080; color: #fff; padding: 12px; border: none; border-radius: 4px; cursor: pointer; width: 150px; align-self: center; }
+    .map-container { margin-top: 30px; max-width: 600px; margin: 30px auto 0; }
+    /* Footer */
+    footer { background: #f4f4f4; text-align: center; padding: 20px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto;">
+      <div class="logo">高成不動産</div>
+      <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</div>
+      <nav>
+        <ul>
+          <li><a href="#about">会社概要</a></li>
+          <li><a href="#services">サービス</a></li>
+          <li><a href="#listings">物件情報</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>信頼と実績の不動産パートナー</h1>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>会社概要</h2>
+    <p>高成不動産は、都市部の高品質な賃貸・売買物件を専門に扱う総合不動産会社です。地域密着型のサービスで、お客様一人ひとりに最適なご提案を行います。</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>サービス</h2>
+    <div class="grid">
+      <div class="item"><h3>物件仲介</h3><p>賃貸・売買の仲介業務をワンストップで提供。豊富なネットワークで最適な物件をご紹介します。</p></div>
+      <div class="item"><h3>管理運営</h3><p>オーナー様の資産価値を最大化するため、賃貸管理とメンテナンスをトータルサポート。</p></div>
+      <div class="item"><h3>コンサルティング</h3><p>市場調査から投資プラン策定まで、不動産投資を成功に導く専門アドバイスを実施します。</p></div>
+    </div>
+  </section>
+
+  <!-- Listings Section -->
+  <section id="listings" class="listings">
+    <h2>最新物件情報</h2>
+    <div class="grid">
+      <div class="listing"><img src="property1.jpg" alt="物件1"><div class="listing-content"><h3>田町レジデンス</h3><p>東京都港区、2LDK、駅徒歩5分、月額25万円。</p></div></div>
+      <div class="listing"><img src="property2.jpg" alt="物件2"><div class="listing-content"><h3>渋谷スカイツリータワー</h3><p>東京都渋谷区、1LDK、駅直結、月額28万円。</p></div></div>
+      <div class="listing"><img src="property3.jpg" alt="物件3"><div class="listing-content"><h3>横浜ガーデンハウス</h3><p>神奈川県横浜市、3LDK、駐車場付き、月額22万円。</p></div></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>お問い合わせ</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="お名前" required>
+      <input type="email" name="email" placeholder="メールアドレス" required>
+      <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
+      <button type="submit">送信</button>
+    </form>
+    <div class="map-container">
+      <h3>所在地</h3>
+      <iframe src="https://www.google.com/maps?q=埼玉県さいたま市浦和区岸町7-1-11+Plenty203&output=embed" width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 高成商事株式会社. All Rights Reserved.</p>
+    <p>営業時間　09:30~18:30 | 定休日　水曜日</p>
+    <p>電話: 048-767-4458 | E-mail: info@takanarijp.com</p>
+  </footer>
+</body>
+</html>
