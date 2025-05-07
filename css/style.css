@@ -1,0 +1,225 @@
+/* ===========================
+   重置样式 & 基础样式 Reset & Base
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========================
+   Header 样式
+   =========================== */
+header {
+  background: #004080;
+  color: #fff;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* 默认桌面菜单 */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: #fff;
+  padding: 8px 12px;
+}
+
+/* ===========================
+   汉堡按钮（Mobile）Hamburger
+   =========================== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+  z-index: 2000;
+}
+
+/* ===========================
+   响应式调整 Responsive (≤768px)
+   =========================== */
+@media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+
+  /* 弹出式菜单框：绝对定位、宽度撑满、横向滚动 */
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #004080;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    display: flex;
+    flex-direction: row;       /* 横向一行 */
+    white-space: nowrap;       /* 不换行 */
+  }
+  nav ul.active {
+    max-height: 60px;          /* 根据行高调节足够显示一行 */
+    overflow-x: auto;          /* 超出时横向滚动 */
+  }
+
+  /* 每个菜单项保持横向显示 */
+  nav ul li {
+    flex: 0 0 auto;            /* 固定宽度由内容决定 */
+  }
+  nav ul li a {
+    display: inline-block;
+    padding: 15px 20px;        /* 让点击区域更大 */
+    color: #fff;
+    line-height: 1;
+  }
+
+  /* 汉堡按钮保持可点 */
+  .menu-toggle {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: #fff;
+    z-index: 2000;
+  }
+}
+
+
+/* ===========================
+   Hero 样式
+   =========================== */
+.hero {
+  background: url('../images/hero-large.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-text {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;     /* 初始大小，后面可调整 */
+  /* …也可以加上响应式、缩放、自适应等规则 */
+}
+
+/* …其余 Section、Contact、Footer 样式保持不变… */
+
+
+/* ===========================
+   Sections 样式
+   =========================== */
+section {
+  padding: 60px 20px;             /* 上下 60px，左右 20px */
+  max-width: 1200px;              /* 最大宽度 */
+  margin: 0 auto;                 /* 居中 */
+}
+.grid {
+  display: grid;                  /* 网格布局 */
+  gap: 20px;                      /* 间距 */
+}
+.services .grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 自适应列 */
+}
+.services .item {
+  border: 1px solid #ddd;         /* 边框 */
+  padding: 20px;                  /* 内边距 */
+  border-radius: 8px;             /* 圆角 */
+}
+.listings .grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.listing {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;               /* 隐藏溢出 */
+}
+.listing img {
+  height: 200px;                  /* 固定高度 */
+  object-fit: cover;              /* 保持比例裁剪 */
+}
+.listing-content {
+  padding: 15px;                  /* 内边距 */
+}
+
+/* ===========================
+   Contact & Map 样式
+   =========================== */
+.contact {
+  padding-bottom: 40px;           /* 底部内边距 */
+}
+.contact form {
+  display: flex;
+  flex-direction: column;         /* 竖向排版 */
+  gap: 15px;                      /* 间距 */
+  max-width: 600px;
+  margin: 0 auto;                 /* 居中 */
+}
+.contact input,
+.contact textarea {
+  padding: 10px;                  /* 内边距 */
+  border: 1px solid #ccc;         /* 边框 */
+  border-radius: 4px;             /* 圆角 */
+  width: 100%;                    /* 宽度 100% */
+}
+.contact button {
+  background: #004080;            /* 按钮背景 */
+  color: #fff;                    /* 按钮文字 */
+  padding: 12px;                  /* 内边距 */
+  border: none;                   /* 无边框 */
+  border-radius: 4px;             /* 圆角 */
+  cursor: pointer;                /* 手型光标 */
+  width: 150px;
+  align-self: center;             /* 居中 */
+}
+.map-container {
+  margin: 30px auto 0;
+  max-width: 600px;
+}
+
+/* ===========================
+   Footer 样式
+   =========================== */
+footer {
+  background: #f4f4f4;            /* 背景色 */
+  text-align: center;             /* 居中对齐 */
+  padding: 20px;                  /* 内边距 */
+  font-size: 0.9rem;              /* 文字大小 */
+}
+footer a {
+  color: inherit;                 /* 继承文字颜色 */
+  text-decoration: none;     /* 下划线 */
+}
