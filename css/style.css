@@ -216,9 +216,16 @@ section {
   overflow: hidden;               /* 隐藏溢出 */
 }
 .listing img {
-  height: 200px;                  /* 固定高度 */
-  object-fit: cover;              /* 保持比例裁剪 */
+  /* 横向铺满外层 .listing 的宽度 */
+  width: 100%;       
+  /* 固定高度，你可以按需要改成 150px / 180px / 200px */
+  height: 200px;     
+  /* 保持宽高比，并裁剪超出部分 */
+  object-fit: cover; 
+  /* 保证是块级元素，去除底部空白 */
+  display: block;    
 }
+
 .listing-content {
   padding: 15px;                  /* 内边距 */
 }
