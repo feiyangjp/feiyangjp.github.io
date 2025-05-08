@@ -22,7 +22,7 @@
 
   /*———————————————
     功能 2：联系表单验证与提交
-  ————————————————*/
+  ————————————————
   function initContactForm() {
     const form = document.querySelector('form#contact-form');
     if (!form) return;
@@ -40,7 +40,7 @@
       form.reset();
     });
   }
-
+*/
   /*———————————————
     功能 3：移动端导航菜单切换
   ————————————————*/
@@ -77,7 +77,6 @@
   ————————————————*/
   document.addEventListener('DOMContentLoaded', () => {
     setCurrentYear();
-    initContactForm();
     initMobileNav();   // 包含切换菜单逻辑
     initLazyLoad();
   });

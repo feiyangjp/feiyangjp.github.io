@@ -33,21 +33,16 @@
     "addressCountry": "JP"
   },
   "areaServed": "JP",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-		"Sunday"
-      ],
-      "opens": "09:30",
-      "closes": "18:30"
-    }
-  ]
+	"openingHoursSpecification": [
+	  {
+		"@type": "OpeningHoursSpecification",
+		"dayOfWeek": [
+		  "Monday","Tuesday","Thursday","Friday","Saturday"
+		],
+		"opens": "09:30",
+		"closes": "18:30"
+	  }
+	]
 }
 </script>
   <link rel="stylesheet" href="css/style.css">
@@ -60,10 +55,10 @@
       <div class="menu-toggle">☰</div>
       <nav>
         <ul>
-          <li><a href="#about">会社概要</a></li>
+          <li><a href="#mission">経営理念</a></li>
           <li><a href="#services">サービス</a></li>
           <li><a href="#listings">物件情報</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="#company-info">会社情報</a></li>
         </ul>
       </nav>
     </div>
@@ -71,18 +66,26 @@
 
   <main>
     <section class="hero">
-        <div class="hero-text">
-        <!-- 例：<p>这里是新的说明文字</p> -->
-        </div>
+		<div class="hero-text">
+		  <!-- TODO: 在此处追加更详细的说明文字 -->
+		</div>
     </section>
     <!-- 其他内容 -->
   </main>
-  <!-- About Section -->
-  <section id="about">
-    <h2>会社概要</h2>
-    <p>高成不動産は、都市部の高品質な賃貸・売買物件を専門に扱う総合不動産会社です。地域密着型のサービスで、お客様一人ひとりに最適なご提案を行います。</p>
-  </section>
-
+  
+  <!-- mission Section -->
+	<section id="mission" class="mission-section">
+	  <h2>経営理念</h2>
+	  <div class="mission-content">
+		<p>私たち高成商事株式会社は、不動産を通じて「安心・信頼・価値創造」を提供し、</p>
+		<p>地域社会とお客様の豊かな未来を築くことを使命としています。</p>
+		<ul>
+		  <li><strong>誠実</strong>：常にお客様の立場に立ち、正直で透明性の高い対応を行います。</li>
+		  <li><strong>革新</strong>：最新の市場動向を取り入れ、価値あるサービスを開発・提案します。</li>
+		  <li><strong>共創</strong>：お客様・社員・協力企業とともに成長し、持続可能な社会を実現します。</li>
+		</ul>
+	  </div>
+	</section>
   <!-- Services Section -->
   <section id="services" class="services">
     <h2>サービス</h2>
@@ -95,23 +98,78 @@
 
   <!-- Listings Section -->
   <section id="listings" class="listings">
-    <h2>最新物件情報</h2>
+    <h2>
+    最新物件情報
+    <span class="update-date">（更新日 2025.5.8）</span>
+    </h2>
     <div class="grid">
-      <div class="listing"><img src="images/property1.jpg" alt="物件1"><div class="listing-content"><h3>田町レジデンス</h3><p>東京都港区、2LDK、駅徒歩5分、月額25万円。</p></div></div>
-      <div class="listing"><img src="images/property2.jpg" alt="物件2"><div class="listing-content"><h3>渋谷スカイツリータワー</h3><p>東京都渋谷区、1LDK、駅直結、月額28万円。</p></div></div>
-      <div class="listing"><img src="images/property3.jpg" alt="物件3"><div class="listing-content"><h3>横浜ガーデンハウス</h3><p>神奈川県横浜市、3LDK、駐車場付き、月額22万円。</p></div></div>
+      <div class="listing"><img src="images/property1.jpg" alt="物件1"><div class="listing-content"><h3>神明ハイツ地下1階、1階・2階</h3><p>東京都北区、店舗・住居、合計204.53㎡<br>9800万円</p></div></div>
+      <div class="listing"><img src="images/property2.jpg" alt="物件2"><div class="listing-content"><h3>越谷市新川町倉庫</h3><p>埼玉県越谷市、土地2218.30㎡、建物1395.00㎡<br>33,000万円</p></div></div>
+      <div class="listing"><img src="images/property3.png" alt="物件3"><div class="listing-content"><h3>ライオンズタワー池袋　2205号室</h3><p>東京都豊島区東池袋、住居、113.79㎡<br>21,800万円</p></div></div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>お問い合わせ</h2>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="お名前" required>
-      <input type="email" name="email" placeholder="メールアドレス" required>
-      <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
-      <button type="submit">送信</button>
-    </form>
+  <!-- Section -->
+  <section id="company-info" class="company-info">
+	<h2>会社情報</h2>
+	  <table class="info-table">
+		<tr>
+		  <td class="label">会社名</td>
+		  <td class="value">高成商事株式会社</td>
+		</tr>
+		<tr>
+		  <td class="label">設立</td>
+		  <td class="value">2008年12月1日</td>
+		</tr>
+		<tr>
+		  <td class="label">所在地</td>
+		  <td class="value">埼玉県さいたま市浦和区岸町7-1-11 Plenty203</td>
+		</tr>
+		<tr>
+		  <td class="label">電話番号</td>
+		  <td class="value">048-767-4458</td>
+		</tr>
+		<tr>
+		  <td class="label">E-mail</td>
+		  <td class="value">info@takanarijp.com</td>
+		</tr>
+		<tr>
+		  <td class="label">定休日</td>
+		  <td class="value">水曜日・年末年始</td>
+		</tr>
+		<tr>
+		  <td class="label">事業内容</td>
+		  <td class="value">
+			不動産賃貸・売買仲介業務、資産管理、投資コンサルティング<br>
+			日本国内および外国人向けサービス全般
+		  </td>
+		</tr>
+		<tr>
+		  <td class="label">免許番号</td>
+		  <td class="value">埼玉県知事（1）第24769号</td>
+		</tr>
+		<tr>
+		  <td class="label">代表者</td>
+		  <td class="value">高　揚</td>
+		</tr>
+		<tr>
+		  <td class="label">所属団体</td>
+		  <td class="value">
+		  公益社団法人 全国宅地建物取引業協会連合会<br>
+		  公益社団法人 全国宅地建物取引業保証協会<br>
+		  公益社団法人 首都圏不動産公正取引協議会<br>
+		  一般社団法人 全国賃貸不動産管理業協会
+		  </td>
+		</tr>
+		<tr>
+		  <td class="label">取引先</td>
+		  <td class="value">
+			三菱UFJ銀行、みずほ銀行、三井住友銀行<br>
+			スルガ銀行、PayPay銀行、川口信用金庫<br>
+			中国銀行、交通銀行、…（他多数）
+		  </td>
+		</tr>
+	  </table>
     <div class="map-container">
       <h3>所在地</h3>
       <iframe src="https://www.google.com/maps?q=埼玉県さいたま市浦和区岸町7-1-11+Plenty203&output=embed" width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
@@ -124,9 +182,7 @@
       <time id="current-year" datetime=""></time>
        高成商事株式会社. All Rights Reserved.
     </p>
-    <p>営業時間 <time datetime="09:30">09:30</time>〜<time datetime="18:30">18:30</time> | 定休日 <time datetime="Wednesday">水曜日</time></p>
-    <p>電話: <a href="tel:048-767-4458">048-767-4458</a> | E-mail: <a href="mailto:info@takanarijp.com">info@takanarijp.com</a></p>
-  </footer>
+   </footer>
 <script src="js/main.js" defer></script>
 </body>
 </html>

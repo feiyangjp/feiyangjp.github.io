@@ -45,11 +45,6 @@ header {
   justify-content: space-between;
 }
 
-/* 确保导航链接也是白色 */
-nav ul li a {
-  color: #fff;
-}
-
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -150,17 +145,56 @@ nav ul li a {
   /* …也可以加上响应式、缩放、自适应等规则 */
 }
 
-/* …其余 Section、Contact、Footer 样式保持不变… */
-
-
 /* ===========================
    Sections 样式
    =========================== */
 section {
-  padding: 60px 20px;             /* 上下 60px，左右 20px */
+  padding: 40px 20px;             /* 上下 40px，左右 20px */
   max-width: 1200px;              /* 最大宽度 */
   margin: 0 auto;                 /* 居中 */
 }
+/* 更新日期文字，字体要比 h2 小 */
+.update-date {
+  font-size: 0.6em;       /* 根据需要调整，比如 0.6em 或 0.7em */
+  color: #666;            /* 可选：用一个比较淡的颜色 */
+  font-weight: normal;    /* 确保不是加粗 */
+  margin-left: 8px;       /* 留点空隙 */
+}
+
+
+/* 経営理念セクション */
+.mission-section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+}
+.mission-section h2 {
+  font-size: 1.8rem;
+  color: #004080;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.mission-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.mission-content ul {
+  list-style: disc inside;
+  margin-top: 16px;
+}
+.mission-content ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.mission-content ul li strong {
+  color: #004080;
+}
+
 .grid {
   display: grid;                  /* 网格布局 */
   gap: 20px;                      /* 间距 */
@@ -192,32 +226,8 @@ section {
 /* ===========================
    Contact & Map 样式
    =========================== */
-.contact {
+.company-info {
   padding-bottom: 40px;           /* 底部内边距 */
-}
-.contact form {
-  display: flex;
-  flex-direction: column;         /* 竖向排版 */
-  gap: 15px;                      /* 间距 */
-  max-width: 600px;
-  margin: 0 auto;                 /* 居中 */
-}
-.contact input,
-.contact textarea {
-  padding: 10px;                  /* 内边距 */
-  border: 1px solid #ccc;         /* 边框 */
-  border-radius: 4px;             /* 圆角 */
-  width: 100%;                    /* 宽度 100% */
-}
-.contact button {
-  background: #004080;            /* 按钮背景 */
-  color: #fff;                    /* 按钮文字 */
-  padding: 12px;                  /* 内边距 */
-  border: none;                   /* 无边框 */
-  border-radius: 4px;             /* 圆角 */
-  cursor: pointer;                /* 手型光标 */
-  width: 150px;
-  align-self: center;             /* 居中 */
 }
 .map-container {
   margin: 30px auto 0;
@@ -236,4 +246,31 @@ footer {
 footer a {
   color: inherit;                 /* 继承文字颜色 */
   text-decoration: none;     /* 下划线 */
+}
+/* 会社情報テーブル */
+.info-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  border-collapse: collapse;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.info-table tr {
+  border-bottom: 1px solid #ddd;
+}
+.info-table td {
+  padding: 12px 16px;
+  vertical-align: top;
+}
+.info-table .label {
+  width: 30%;
+  font-weight: bold;
+  white-space: nowrap;    /* 左列标签不换行 */
+  color: #004080;
+}
+.info-table .value {
+  width: 70%;
+  word-wrap: break-word;  /* 右列内容可换行 */
+  color: #333;
+  line-height: 1.6;
 }
