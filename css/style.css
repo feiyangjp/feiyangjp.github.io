@@ -46,10 +46,15 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif; /* 使用 Montserrat 字体 */
+  font-weight: 700;                      /* 加粗 */
+  font-size: 1.75rem;                    /* 略大标题尺寸 */
+  letter-spacing: 0.05em;                /* 增加字距，增强可读性 */
+  text-transform: uppercase;             /* 全部大写（可选） */
+  color: #fff;                           /* 确保白色高对比 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 轻微投影，增加层次 */
 }
+
 
 /* 默认桌面菜单 */
 nav ul {
