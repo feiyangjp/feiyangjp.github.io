@@ -80,23 +80,25 @@ function initHeroSlideshow() {
   if (!hero) return;
 
   // 轮播的图片路径列表
-  const images = [
-    'images/hero-1.png',
-    'images/hero-2.png',
-    'images/hero-3.png'
-  ];
+	const images = [
+	  'images/hero-1.png',
+	  'images/hero-2.png',
+	  'images/hero-3.png',
+	  'images/hero-4.png',
+	  'images/hero-5.png'
+	];
+	let idx = 0;
+	const imgEl = document.getElementById('hero-img');
 
-  let idx = 0;
-  // 首次设置
-  hero.style.backgroundImage = `url('${images[idx]}')`;
+	// 初次加载
+	imgEl.src = images[idx];
 
-  // 每 5 秒切换一次
-  setInterval(() => {
-    idx = (idx + 1) % images.length;
-    // 淡入淡出效果（可选）
-    hero.style.transition = 'background-image 1s ease-in-out';
-    hero.style.backgroundImage = `url('${images[idx]}')`;
-  }, 5000);
+	// 轮播函数
+	setInterval(() => {
+	  idx = (idx + 1) % images.length;
+	  imgEl.src = images[idx];
+	}, 5000);
+
 }
 
   /*———————————————

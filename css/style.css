@@ -161,30 +161,49 @@ nav ul li a {
    Hero 占满剩余视口，脱离任何 max-width 限制
    ============================================ */
 .hero {
-  /* 先让它相对定位在文档流中，保留下方内容自然流 */
   position: relative;
-
-  /* 下面两行：以视口为基准铺满宽度并居中 */
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
-
-  /* 高度扣除 header：60px 是你 header 的高度 */
   height: calc(100vh - 60px);
-
-  /* 背景图设置 */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  /* Flex 居中子元素（如有） */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* 去掉多余空隙 */
+  overflow: hidden;
   margin: 0;
   padding: 0;
+}
+
+
+.hero-image {
+  width: 100%;                 /* 横向铺满容器 */
+  height: 100%;                /* 纵向铺满容器 */
+  object-fit: cover;       /* ← 关键：改回 cover，实现无缝铺满 */
+  object-position: center;     /* 居中对齐 */
+  display: block;
+  background: #000;            /* 容器之外也填充同色 */
+}
+.hero-text {
+  position: absolute;               /* 绝对定位在 .hero 内 */
+  top: 50%;                         /* 垂直居中 */
+  left: 50%;                        /* 水平居中 */
+  transform: translate(-50%, -50%); /* 精确居中自身 */
+  z-index: 1;                       /* 高于轮播图 */
+  text-align: center;               /* 文字居中 */
+  padding: 0 20px;                  /* 小边距，防止超出屏幕 */
+  color: #fff;                      /* 白色高对比 */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7); /* 羽化阴影提升可读性 */
+}
+
+.hero-text h1 {
+  white-space: nowrap;            /* 禁止换行 */
+  overflow: hidden;               /* 隐藏溢出 */
+  text-overflow: ellipsis;        /* 超长末尾显示省略号（可选） */
+
+  /* 字体根据视口宽度自动缩放，最小 1.2rem，理想 5vw，最大 2.5rem */
+  font-size: clamp(1.2rem, 5vw, 2.5rem);
+}
+
+
+.hero-text p {
+  font-size: 1.2rem;                /* 段落文本 */
 }
 
 /* 确保后续 section 紧跟在 hero 之后 */
@@ -198,18 +217,9 @@ body {
   overflow-x: hidden;
 }
 
-
-
 /* 轮播背景图，每张图片都铺满 hero 区域 */
 .hero.slideshow {
   transition: background-image 1s ease-in-out; /* 背景切换动画 */
-}
-.hero-text {
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  font-size: 1.2rem;     /* 初始大小，后面可调整 */
-  /* …也可以加上响应式、缩放、自适应等规则 */
 }
 
 /* ===========================
