@@ -11,6 +11,7 @@ body {
   line-height: 1.6;
   color: #333;
   margin: 0;  /* 也别忘记清掉 body 默认 margin */
+  padding: 0;
 }
 a {
   color: #0066cc;
@@ -33,6 +34,8 @@ header {
   z-index: 1000;
   margin: 0;
   padding: 0;
+  height:60px;
+  overflow: visible;    /* 确保不裁切子元素 */
 }
 
 /* 内层容器只负责布局，不用再单独设置 color */
@@ -82,52 +85,67 @@ nav ul li a {
    响应式调整 Responsive (≤768px)
    =========================== */
 @media (max-width: 768px) {
+
+  /* 1. Header 基础，允许子元素溢出 */
   header {
-    display: block;
-    padding: 20px;
     position: relative;
+    overflow: visible;
   }
-
-  /* 弹出式菜单框：绝对定位、宽度撑满、横向滚动 */
-  nav ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #004080;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+  
+  .header-inner {
+    width: 100vw;
+    padding: 10px 0;
     display: flex;
-    flex-direction: row;       /* 横向一行 */
-    white-space: nowrap;       /* 不换行 */
-  }
-  nav ul.active {
-    max-height: 60px;          /* 根据行高调节足够显示一行 */
-    overflow-x: auto;          /* 超出时横向滚动 */
+    align-items: center;
+    justify-content: space-between;
   }
 
-  /* 每个菜单项保持横向显示 */
-  nav ul li {
-    flex: 0 0 auto;            /* 固定宽度由内容决定 */
-  }
-  nav ul li a {
-    display: inline-block;
-    padding: 15px 20px;        /* 让点击区域更大 */
-    color: #fff;
-    line-height: 1;
-  }
-
-  /* 汉堡按钮保持可点 */
+  /* 2. 汉堡按钮保持右侧可见 */
   .menu-toggle {
     display: block !important;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+    position: relative;
+    z-index: 2001;
     font-size: 1.8rem;
     color: #fff;
+    cursor: pointer;
+  }
+
+  /* 3. 默认隐藏的竖列菜单 */
+  nav ul {
+    position: absolute;
+    top: 100%;            /* header 下方紧贴 */
+    right: 0;             /* 紧靠右侧对齐 */
+    display: none;        /* 默认收起 */
+    
+    flex-direction: column;   /* 竖列排列 */
+    background: #004080;      /* 与 header 同色 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 4px 0 4px 4px; 
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
     z-index: 2000;
+  }
+
+  /* 4. 展开时显示 */
+  nav ul.active {
+    display: flex;
+  }
+
+  /* 5. 菜单项竖排样式 */
+  nav ul li {
+    width: 160px;      /* 或根据文字长度自适应 */
+    text-align: right; /* 右对齐更靠近 ☰ 按钮 */
+  }
+  nav ul li a {
+    display: block;
+    padding: 12px 16px;
+    color: #fff;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  nav ul li:last-child a {
+    border-bottom: none;  /* 去掉最后一条下边框 */
   }
 }
 
@@ -135,12 +153,56 @@ nav ul li a {
 /* ===========================
    Hero 样式
    =========================== */
+/* Hero 占满剩余视口，扣除 header 后的全宽全高 */
+/* =================================================
+   Hero 区块：脱离最大宽度容器，真正全屏铺满
+   ================================================= */
+/* ============================================
+   Hero 占满剩余视口，脱离任何 max-width 限制
+   ============================================ */
 .hero {
-  background: url('../images/hero-large.jpg') center/cover no-repeat;
-  height: 60vh;
+  /* 先让它相对定位在文档流中，保留下方内容自然流 */
+  position: relative;
+
+  /* 下面两行：以视口为基准铺满宽度并居中 */
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* 高度扣除 header：60px 是你 header 的高度 */
+  height: calc(100vh - 60px);
+
+  /* 背景图设置 */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Flex 居中子元素（如有） */
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* 去掉多余空隙 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 确保后续 section 紧跟在 hero 之后 */
+.hero + section {
+  /* 如果你之前给 section 设置了 margin-top，可在此清除 */
+  margin-top: 0;
+}
+
+/* 防止因 100vw 产生轻微水平滚动 */
+body {
+  overflow-x: hidden;
+}
+
+
+
+/* 轮播背景图，每张图片都铺满 hero 区域 */
+.hero.slideshow {
+  transition: background-image 1s ease-in-out; /* 背景切换动画 */
 }
 .hero-text {
   color: #fff;
