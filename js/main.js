@@ -71,6 +71,33 @@
     });
     imgs.forEach(img => observer.observe(img));
   }
+  /*———————————————
+    功能 5：图片轮播多图
+  ————————————————*/  
+// 在 initMobileNav() 之后，或者在 DOMContentLoaded 回调里添加：
+function initHeroSlideshow() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  // 轮播的图片路径列表
+  const images = [
+    'images/hero-1.png',
+    'images/hero-2.png',
+    'images/hero-3.png'
+  ];
+
+  let idx = 0;
+  // 首次设置
+  hero.style.backgroundImage = `url('${images[idx]}')`;
+
+  // 每 5 秒切换一次
+  setInterval(() => {
+    idx = (idx + 1) % images.length;
+    // 淡入淡出效果（可选）
+    hero.style.transition = 'background-image 1s ease-in-out';
+    hero.style.backgroundImage = `url('${images[idx]}')`;
+  }, 5000);
+}
 
   /*———————————————
     所有功能统一初始化
@@ -79,6 +106,7 @@
     setCurrentYear();
     initMobileNav();   // 包含切换菜单逻辑
     initLazyLoad();
+    initHeroSlideshow();
   });
 
 })();
