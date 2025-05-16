@@ -48,14 +48,27 @@ header {
   justify-content: space-between;
 }
 
-.logo {
-  font-family: 'Montserrat', sans-serif; /* 使用 Montserrat 字体 */
-  font-weight: 700;                      /* 加粗 */
-  font-size: 1.75rem;                    /* 略大标题尺寸 */
-  letter-spacing: 0.05em;                /* 增加字距，增强可读性 */
-  text-transform: uppercase;             /* 全部大写（可选） */
-  color: #fff;                           /* 确保白色高对比 */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 轻微投影，增加层次 */
+/* Logo 链接整体：水平排列、垂直居中 */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* 去掉下划线 */
+}
+
+/* Logo 图片：固定高度，自适应宽度 */
+.logo-img {
+  height: 40px;      /* 根据设计调节，比如 40px */
+  width: auto;
+  margin-right: 8px; /* 图文间距 */
+}
+
+/* Logo 文字：保持现有样式 */
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  white-space: nowrap;
 }
 
 
@@ -85,6 +98,8 @@ nav ul li a {
    响应式调整 Responsive (≤768px)
    =========================== */
 @media (max-width: 768px) {
+  .logo-img { height: 32px; }
+  .logo-text { font-size: 1.2rem; }
 
   /* 1. Header 基础，允许子元素溢出 */
   header {
