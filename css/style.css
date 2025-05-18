@@ -250,7 +250,7 @@ section {
   font-size: 0.6em;       /* 根据需要调整，比如 0.6em 或 0.7em */
   color: #666;            /* 可选：用一个比较淡的颜色 */
   font-weight: normal;    /* 确保不是加粗 */
-  margin-left: 8px;       /* 留点空隙 */
+  margin-left: 1px;       /* 留点空隙 */
 }
 
 
@@ -372,4 +372,23 @@ footer a {
   word-wrap: break-word;  /* 右列内容可换行 */
   color: #333;
   line-height: 1.6;
+}
+#mission,
+.services,         /* 复用 services 类 */
+#listings,
+#company-info {
+  scroll-margin-top: 80px;
+}
+#mission,
+.services,         /* 复用 services 类 */
+#listings,
+#company-info {
+  scroll-margin-top: 80px;
+}
+/* 只对菜单锚点对应的 ID 应用 */
+#mission,
+#services,
+#listings,
+#company-info {
+  scroll-margin-top: 80px;
 }
