@@ -64,8 +64,8 @@ header {
 
 /* Logo 文字：保持现有样式 */
 .logo-text {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-family: 'Montserrat', "Noto Sans JP", "Noto Sans SC", "Hiragino Sans", "Meiryo", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 800;
   font-size: 1.5rem;
   color: #fff;
   white-space: nowrap;
@@ -330,7 +330,7 @@ section {
 }
 .map-container {
   margin: 30px auto 0;
-  max-width: 600px;
+  max-width: 1200px;
 }
 
 /* ===========================
