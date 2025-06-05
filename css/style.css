@@ -33,7 +33,7 @@ header {
   top: 0;
   z-index: 1000;
   margin: 0;
-  padding: 0;
+  padding: 10px 0;
   height:60px;
   overflow: visible;    /* 确保不裁切子元素 */
 }
@@ -42,7 +42,7 @@ header {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,20 +53,22 @@ header {
   display: flex;
   align-items: center;
   text-decoration: none; /* 去掉下划线 */
+  transform: none; /* ❌ 移除之前的 translate(10px, -10px)，会导致偏移 */
+  height:100%;
 }
 
 /* Logo 图片：固定高度，自适应宽度 */
 .logo-img {
   height: 40px;      /* 根据设计调节，比如 40px */
   width: auto;
-  margin-right: 8px; /* 图文间距 */
+  margin-right: 10px; /* 图文间距 */
 }
 
 /* Logo 文字：保持现有样式 */
 .logo-text {
   font-family: 'Montserrat', "Noto Sans JP", "Noto Sans SC", "Hiragino Sans", "Meiryo", "Microsoft YaHei", Arial, sans-serif;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   color: #fff;
   white-space: nowrap;
 }
