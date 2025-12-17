@@ -200,9 +200,14 @@ nav ul li a {
   top: 50%;                         /* 垂直居中 */
   left: 50%;                        /* 水平居中 */
   transform: translate(-50%, -50%); /* 精确居中自身 */
-  z-index: 1;                       /* 高于轮播图 */
+  z-index: 2;                       /* 高于轮播图 */
+  
+    /* 👇 横向铺开 */
+  width: min(92vw, 860px);   /* 手机几乎全宽，桌面限制最大宽度 */
+  max-width: 860px;
+  
   text-align: center;               /* 文字居中 */
-  padding: 0 20px;                  /* 小边距，防止超出屏幕 */
+  padding: 0 24px;                  /* 小边距，防止超出屏幕 */
   color: #fff;                      /* 白色高对比 */
   text-shadow: 0 2px 4px rgba(0,0,0,0.7); /* 羽化阴影提升可读性 */
 }
@@ -214,11 +219,17 @@ nav ul li a {
 
   /* 字体根据视口宽度自动缩放，最小 1.2rem，理想 5vw，最大 2.5rem */
   font-size: clamp(1.2rem, 5vw, 2.5rem);
+  
+  line-height: 1.3;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em
 }
 
 
 .hero-text p {
-  font-size: 1.2rem;                /* 段落文本 */
+  font-size: 1rem;                /* 段落文本 */
+  line-height: 1.7;
+  margin: 0 auto;
 }
 
 /* 确保后续 section 紧跟在 hero 之后 */
